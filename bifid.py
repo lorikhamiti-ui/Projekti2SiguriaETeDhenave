@@ -37,6 +37,49 @@ def enkripto_bifid(teksti, celsi):
     # lexojme numrat nga dy dhe i kthejme serish ne shkronja
     for i in range(0, len(te_gjitha_numrat), 2):
         r = te_gjitha_numrat[i]
+
+        def dekripto_bifid(teksti_enkriptuar, celsi):
+    alfabeti = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
+    celsi = celsi.upper().replace("J", "I").replace(" ", "")
+    
+    katrori = ""
+    for shkronja in celsi:
+        if shkronja not in katrori:
+            katrori += shkronja
+            
+    for shkronja in alfabeti:
+        if shkronja not in katrori:
+            katrori += shkronja
+
+    teksti_i_paster = ""
+    teksti_enkriptuar = teksti_enkriptuar.upper().replace("J", "I")
+    for shkronja in teksti_enkriptuar:
+        if shkronja in katrori:
+            teksti_i_paster += shkronja
+
+    te_gjitha_numrat = []
+    for shkronja in teksti_i_paster:
+        indeksi = katrori.index(shkronja)
+        te_gjitha_numrat.append(indeksi // 5)
+        te_gjitha_numrat.append(indeksi % 5)
+
+    gjysma = len(te_gjitha_numrat) // 2
+    rreshtat = []
+    kolonat = []
+
+    for i in range(gjysma):
+        rreshtat.append(te_gjitha_numrat[i])
+
+    for i in range(gjysma, len(te_gjitha_numrat)):
+        kolonat.append(te_gjitha_numrat[i])
+
+    teksti_dekriptuar = ""
+    for i in range(gjysma):
+        r = rreshtat[i]
+        c = kolonat[i]
+        teksti_dekriptuar += katrori[(r * 5) + c]
+
+    return teksti_dekriptuar
         c = te_gjitha_numrat[i+1]
         teksti_enkriptuar += katrori[(r * 5) + c]
         

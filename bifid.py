@@ -37,6 +37,10 @@ def enkripto_bifid(teksti, celsi):
     # lexojme numrat nga dy dhe i kthejme serish ne shkronja
     for i in range(0, len(te_gjitha_numrat), 2):
         r = te_gjitha_numrat[i]
+        c = te_gjitha_numrat[i+1]
+        teksti_enkriptuar += katrori[(r * 5) + c]
+        
+    return teksti_enkriptuar
 
 def dekripto_bifid(teksti_enkriptuar, celsi):
     alfabeti = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
@@ -80,7 +84,3 @@ def dekripto_bifid(teksti_enkriptuar, celsi):
         teksti_dekriptuar += katrori[(r * 5) + c]
 
     return teksti_dekriptuar
-        c = te_gjitha_numrat[i+1]
-        teksti_enkriptuar += katrori[(r * 5) + c]
-        
-    return teksti_enkriptuar

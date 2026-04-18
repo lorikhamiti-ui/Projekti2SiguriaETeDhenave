@@ -38,7 +38,7 @@ def enkripto_bifid(teksti, celsi):
     for i in range(0, len(te_gjitha_numrat), 2):
         r = te_gjitha_numrat[i]
 
-        def dekripto_bifid(teksti_enkriptuar, celsi):
+def dekripto_bifid(teksti_enkriptuar, celsi):
     alfabeti = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
     celsi = celsi.upper().replace("J", "I").replace(" ", "")
     

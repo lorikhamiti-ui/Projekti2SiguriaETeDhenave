@@ -26,3 +26,27 @@ def main():
                 else:
                     print("Keni dhene veprim te gabuar.")
                     continue 
+            elif zgjedhja == '2':
+                if veprimi.upper() == 'E':
+                    rezultati = enkripto_permutation(teksti, celsi)
+                elif veprimi.upper() == 'D':
+                    rezultati = dekripto_permutation(teksti, celsi)
+                else:
+                    print("Keni dhene veprim te gabuar.")
+                    continue
+
+            print("Rezultati: " + rezultati)
+            
+            pergjigja = input("\nDeshironi te provoni perseri? (po/jo): ")
+            if pergjigja.lower() == 'jo':
+                print("Mirupafshim!")
+                vazhdo = False
+                
+        elif zgjedhja == '3':
+            print("Mirupafshim!")
+            vazhdo = False
+            
+        else:
+            print("Zgjedhje e gabuar. Provoni prap.")
+
+main()
